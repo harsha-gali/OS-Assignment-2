@@ -8,9 +8,10 @@ This project is a simulation of an **Air Traffic Control System**, built as part
 
 The system simulates air traffic across multiple airports by coordinating the following entities:
 
-- **Planes** (as individual processes)
-  - Passenger planes spawn child passenger processes and use **pipes** for communication.
-  - Cargo planes accept user input for cargo load.
+- **Planes** (implemented as individual processes)
+  - Two types: **Passenger planes** and **Cargo planes**, both take structured user input at runtime.
+  - Passenger planes create child processes to represent individual passengers and use **pipes** for communication.
+  - Cargo planes take input for the number and average weight of cargo items.
 - **Airports** (multi-threaded processes)
   - Handle both arrivals and departures concurrently using threads.
   - Each airport has multiple **runways** with different weight capacities.
@@ -63,8 +64,6 @@ This document outlines the design constraints, entity behaviors, communication r
 ## 📌 Notes
 
 - All processes terminate automatically after completion or when triggered by the cleanup process.
-- Only POSIX-approved mechanisms were used (no shared memory or additional IPC).
-- Assignment evaluated on Ubuntu lab machines during a live demo.
 
 ---
 
