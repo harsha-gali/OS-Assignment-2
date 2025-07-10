@@ -16,7 +16,7 @@ The system simulates air traffic across multiple airports by coordinating the fo
   - Handle both arrivals and departures concurrently using threads.
   - Each airport has multiple **runways** with different weight capacities.
   - Runways are allocated to planes using a **best-fit** algorithm.
-  - **Mutexes/semaphores** are used to synchronize thread access to runways and prevent conflicts.
+  - **Mutexes** are used to synchronize thread access to runways and prevent conflicts.
 - **Air Traffic Controller (ATC)**
   - Coordinates all communication through a **single POSIX message queue**.
   - Logs each flight's journey to a central log file.
@@ -38,7 +38,7 @@ The simulation includes realistic constraints such as runway availability, board
 - Models both passenger and cargo planes with real-time user input and behavior.
 - Dynamically spawns child processes for passengers, capturing weight details via **pipes**.
 - Allocates runways using a best-fit strategy, with automatic fallback to a backup runway if needed.
-- Uses **threads** at each airport to handle multiple departures and arrivals simultaneously, with synchronization implemented using **mutexes** and **semaphores**.
+- Uses **threads** at each airport to handle multiple departures and arrivals simultaneously, with synchronization implemented using **mutexes**.
 - Centralized Air Traffic Controller (ATC) coordinates all messaging through a single **POSIX message queue**.
 - Tracks each flight's journey and logs it to a structured log file.
 - Supports safe, user-triggered shutdown after all flights are completed.
@@ -61,7 +61,7 @@ Each component (plane, airport, controller, cleanup) is compiled independently a
 The repository includes the full problem statement and system specification: 
 **[OS Assignment PDF](./OS%20Assignment%202%20-%20Air%20Traffic%20Control%20System.pdf)**
 
-This document outlines the design constraints, entity behaviors, communication rules, and expected synchronization mechanisms.
+This document outlines the design constraints, entity behaviors, and communication rules. However, aspects such as communication mapping, message structure, and synchronization logic (e.g., runway handling via mutexes) were independently designed.
 
 ---
 
