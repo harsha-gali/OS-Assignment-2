@@ -28,6 +28,7 @@ The system simulates air traffic across multiple airports by coordinating the fo
 The simulation includes realistic constraints such as runway availability, boarding/unloading durations, and asynchronous plane journeys. Passenger and cargo data are collected dynamically during runtime, and system coordination is entirely message-driven.
 
 ![System Architecture](./architecture-diagram.PNG)
+
 *System architecture showing process hierarchy and communication mechanisms*
 
 ---
