@@ -27,19 +27,17 @@ The system simulates air traffic across multiple airports by coordinating the fo
 
 The simulation includes realistic constraints such as runway availability, boarding/unloading durations, and asynchronous plane journeys. Passenger and cargo data are collected dynamically during runtime, and system coordination is entirely message-driven.
 
-
 ---
+## 🚀 Features
 
-## 💡 Key Concepts Demonstrated
-
-- **POSIX-compliant multi-process architecture**
-- **Process creation and management (fork, exec, wait)**
-- **Pipes for parent-child IPC**
-- **POSIX message queues for multi-process messaging**
-- **Multithreading with pthreads**
-- **Thread synchronization using mutexes/semaphores**
-- **Best-fit allocation of shared runways to planes**
-- **Real-time simulation of a distributed, concurrent system**
+- Simulates plane operations occurring concurrently across multiple airports.
+- Models both passenger and cargo planes with real-time user input and behavior.
+- Dynamically spawns child processes for passengers, capturing weight details via **pipes**.
+- Allocates runways using a best-fit strategy, with automatic fallback to a backup runway if needed.
+- Uses **threads** at each airport to handle multiple departures and arrivals simultaneously, with synchronization implemented using **mutexes** and **semaphores**.
+- Centralized Air Traffic Controller (ATC) coordinates all messaging through a single **POSIX message queue**.
+- Tracks each flight's journey and logs it to a structured log file.
+- Supports safe, user-triggered shutdown after all flights are completed.
 
 
 ---
@@ -57,15 +55,10 @@ Each component (plane, airport, controller, cleanup) is compiled independently a
 ## 📄 Project Documentation
 
 The repository includes the full problem statement and system specification: 
-**[OS Assignment PDF](./OS%20Assignment%202%20-%20Air%20Traffic%20Control%20System%20.pdf)**
+**[OS Assignment PDF](./OS%20Assignment%202%20-%20Air%20Traffic%20Control%20System.pdf)**
 
 This document outlines the design constraints, entity behaviors, communication rules, and expected synchronization mechanisms.
 
 ---
 
-## 📌 Notes
-
-- All processes terminate automatically after completion or when triggered by the cleanup process.
-
----
 
