@@ -61,7 +61,7 @@ Each component (plane, airport, controller, cleanup) is compiled independently a
 The repository includes the full problem statement and system specification: 
 **[OS Assignment PDF](./OS%20Assignment%202%20-%20Air%20Traffic%20Control%20System.pdf)**
 
-This document outlines the design constraints, entity behaviors, and communication rules. However, aspects such as communication mapping, message structure, and synchronization logic (e.g., runway handling via mutexes) were independently designed.
+This document outlines the design constraints, entity behaviors, and communication requirements. While it specifies the allowed synchronization mechanisms (mutexes and semaphores) and mandates the use of message queues, the implementation logic, including communication mapping, message structuring, and synchronization strategy, was designed independently.
 
 ---
 
