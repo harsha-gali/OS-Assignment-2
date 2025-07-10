@@ -8,7 +8,7 @@ This project is a simulation of an **Air Traffic Control System**, built as part
 
 The system simulates air traffic across multiple airports by coordinating the following entities:
 
-- **Planes** (implemented as individual processes)
+- **Planes**
   - Two types: **Passenger planes** and **Cargo planes**, both take structured user input at runtime.
   - Passenger planes create child processes to represent individual passengers and use **pipes** for communication.
   - Cargo planes take input for the number and average weight of cargo items.
@@ -21,7 +21,9 @@ The system simulates air traffic across multiple airports by coordinating the fo
   - Coordinates all communication through a **single POSIX message queue**.
   - Logs each flight's journey to a central log file.
 - **Cleanup Process**
-  - Handles graceful system-wide shutdown after all planes have landed.
+  - Handles system-wide termination when triggered by user input.
+  - Signals the Air Traffic Controller, which initiates shutdown by instructing airports to terminate once all planes have landed.
+  - Ensures proper cleanup of IPC mechanisms like message queues.
 
 The simulation includes realistic constraints such as runway availability, boarding/unloading durations, and asynchronous plane journeys. Passenger and cargo data are collected dynamically during runtime, and system coordination is entirely message-driven.
 
@@ -55,7 +57,7 @@ Each component (plane, airport, controller, cleanup) is compiled independently a
 ## 📄 Project Documentation
 
 The repository includes the full problem statement and system specification: 
-**[OS Assignment PDF](./OS%20Assignment%202%20-%20Air%20Traffic%20Control%20System%20(1).pdf)**
+**[OS Assignment PDF](./OS%20Assignment%202%20-%20Air%20Traffic%20Control%20System%20.pdf)**
 
 This document outlines the design constraints, entity behaviors, communication rules, and expected synchronization mechanisms.
 
