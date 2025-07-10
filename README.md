@@ -56,7 +56,7 @@ Each component (plane, airport, controller, cleanup) is compiled independently a
 
 ---
 
-## 📄 Project Documentation
+## 📄 Notes
 
 The repository includes the full problem statement and system specification: 
 **[OS Assignment PDF](./OS%20Assignment%202%20-%20Air%20Traffic%20Control%20System.pdf)**
