@@ -4,7 +4,7 @@ This project is a simulation of an **Air Traffic Control System**, built as part
 
 ---
 
-## ✈️ Overview
+## Overview
 
 The system simulates air traffic across multiple airports by coordinating the following entities:
 
@@ -32,7 +32,7 @@ The simulation includes realistic constraints such as runway availability, board
 *System architecture showing process hierarchy and communication mechanisms*
 
 ---
-## 🚀 Features
+## Features
 
 - Simulates plane operations occurring concurrently across multiple airports.
 - Models both passenger and cargo planes with real-time user input and behavior.
@@ -46,7 +46,7 @@ The simulation includes realistic constraints such as runway availability, board
 
 ---
 
-## 🔧 Build & Run
+## Build & Run
 
 The system is implemented in **C** and is fully **POSIX-compliant**. It is designed to be compiled and executed on Linux systems (tested on Ubuntu 22.04) using `gcc` with `-pthread` support for multithreading.
 
@@ -56,7 +56,7 @@ Each component (plane, airport, controller, cleanup) is compiled independently a
 
 ---
 
-## 📄 Project Documentation
+## Project Documentation
 
 The repository includes the full problem statement and system specification: 
 **[OS Assignment PDF](./OS%20Assignment%202%20-%20Air%20Traffic%20Control%20System.pdf)**
